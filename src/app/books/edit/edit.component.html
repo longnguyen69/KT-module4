@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-2">
+    <a routerLink="/book/list" class="btn btn-primary">List Books</a>
+  </div>
+  <div class="col-3">
+    <a routerLink="/book/create-new" class="btn btn-primary"> + Add Book</a>
+  </div>
+</div>
+<form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label>Title</label>
+        <input type="text" class="form-control" formControlName="title">
+    </div>
+    <div class="form-group">
+        <label>Author</label>
+        <input type="text" class="form-control" formControlName="author">
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <textarea class="form-control" formControlName="description" cols="" rows="5"></textarea>
+    </div>
+    <button class="btn btn-success" type="submit">Submit</button>
+    <a class="btn btn-secondary ml-2" routerLink="/book/list">Cancel</a>
+</form>
